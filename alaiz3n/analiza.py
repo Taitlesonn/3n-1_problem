@@ -1,3 +1,7 @@
+#imports
+
+import matplotlib.pyplot as plt
+
 class Liczba:
     def __init__(self):
         self.liczba = []
@@ -48,6 +52,28 @@ class Liczba:
         self.liczba = [self.liczba[i] for i in posortowane_indeksy]
         self.sumy = [self.sumy[i] for i in posortowane_indeksy]
         self.liczba_operacji = [self.liczba_operacji[i] for i in posortowane_indeksy]
+    
+
+    def draw_graf_liczba_do_sumy(self):
+        plt.plot(self.liczba, self.sumy)
+        plt.xlabel("liczba")
+        plt.ylabel("suma")
+        plt.title("liczba do sumy")
+        plt.show()
+
+    def draw_graf_il_operacji_do_liczby(self):
+        plt.plot(self.liczba, self.liczba_operacji)
+        plt.xlabel("liczby")
+        plt.ylabel("liczba operacji")
+        plt.title("ilość operacji do liczbny")
+        plt.show()
+
+    def draw_graf_licza_operacji_do_sumy(self):
+        plt.plot(self.sumy, self.liczba_operacji)
+        plt.xlabel("suma")
+        plt.ylabel("liczba operacji")
+        plt.title("suma do liczby operacji")
+        plt.show()
 
 
 
@@ -65,12 +91,14 @@ def main():
             else:
                 pass
 
-            if i >= 100:  # Ograniczenie dla testów
+            if i >= 1000:  # Ograniczenie dla testów
                 break
     l.convert_to_int()
     l.filtr_list()
 
-    
+    l.draw_graf_liczba_do_sumy()
+    l.draw_graf_il_operacji_do_liczby()
+    l.draw_graf_liczba_do_sumy()
     l.print_f()  # Wywołujemy funkcję do wyświetlenia wyników
 
 main()
