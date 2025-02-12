@@ -18,6 +18,38 @@ class Liczba:
         except ValueError as e:
             print(f"Błąd konwersji: {e}")
 
+    def filtr_list(self):
+        """
+            Przez to że w naszym programie w c stawiamy na wydajność nie dokładność część liczb może być obliczna wielokrotnie.
+            Ta funkcja zajmie się odfiltrowywaniem odpowiednich elementów. A potem posortuje liste.
+        """
+
+        seen = set()  # Używamy zbioru do śledzenia już widzianych liczb
+        indeksy_do_usuniecia = []
+
+        for i, liczba in enumerate(self.liczba):
+            if liczba in seen:
+                indeksy_do_usuniecia.append(i)
+            else:
+                seen.add(liczba)
+
+        # Usuwamy elementy na tych samych indeksach w trzech listach
+        for indeks in reversed(indeksy_do_usuniecia):
+            del self.liczba[indeks]
+            del self.sumy[indeks]
+            del self.liczba_operacji[indeks]
+
+        self.index -= len(indeksy_do_usuniecia)
+
+        # Tworzymy listę indeksów posortowanych według wartości w self.liczba
+        posortowane_indeksy = sorted(range(len(self.liczba)), key=lambda i: self.liczba[i])
+
+        # Tworzymy nowe listy z uporządkowanymi elementami
+        self.liczba = [self.liczba[i] for i in posortowane_indeksy]
+        self.sumy = [self.sumy[i] for i in posortowane_indeksy]
+        self.liczba_operacji = [self.liczba_operacji[i] for i in posortowane_indeksy]
+
+
 
 
 def main():
@@ -36,6 +68,9 @@ def main():
             if i >= 100:  # Ograniczenie dla testów
                 break
     l.convert_to_int()
+    l.filtr_list()
+
+    
     l.print_f()  # Wywołujemy funkcję do wyświetlenia wyników
 
 main()
