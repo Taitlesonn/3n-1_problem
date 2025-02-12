@@ -21,7 +21,16 @@ Następnie uruchom program:
 
 Po wygenerowaniu danych możesz uruchomić analizę w Pythonie:
 ```bash
+#dla linuxa/macos
+source nazwa_srodowiska/bin/activate
+#dla windows
+.\nazwa_srodowiska\Scripts\activate
+
+
 python3 alaiz3n/analiza.py
+
+#żby wyjść:
+deactivate
 ```
 
 ## Wymagania
