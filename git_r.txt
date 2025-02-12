@@ -1,0 +1,50 @@
+Jeśli dokonałeś zmian w swoim projekcie i chcesz je wysłać na GitHub, wykonaj następujące kroki:  
+
+---
+
+### **1. Sprawdź status zmian**  
+```bash
+git status
+```
+Zobaczysz listę plików, które zostały zmodyfikowane, dodane lub usunięte.
+
+---
+
+### **2. Dodaj zmienione pliki do wersjonowania**  
+Jeśli chcesz dodać wszystkie zmodyfikowane pliki:
+```bash
+git add .
+```
+Jeśli chcesz dodać tylko konkretne pliki:
+```bash
+git add nazwa_pliku
+```
+
+---
+
+### **3. Wykonaj commit (zapisz zmiany)**  
+```bash
+git commit -m "Krótki opis zmian"
+```
+Przykład:
+```bash
+git commit -m "Poprawiona analiza danych w analiza.py"
+```
+
+---
+
+### **4. Wypchnij zmiany na GitHub**  
+```bash
+git push
+```
+Jeśli dostaniesz błąd, spróbuj:
+```bash
+git push origin main
+```
+
+---
+
+### **5. Sprawdź na GitHubie**  
+Wejdź na [repozytorium](https://github.com/Taitlesonn/3n-1_problem) i zobacz, czy zmiany się pojawiły.  
+
+Daj znać, jeśli masz problem! 🚀
