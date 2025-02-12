@@ -46,5 +46,3 @@ git push origin main
 
 ### **5. Sprawdź na GitHubie**  
 Wejdź na [repozytorium](https://github.com/Taitlesonn/3n-1_problem) i zobacz, czy zmiany się pojawiły.  
-
-Daj znać, jeśli masz problem! 🚀
