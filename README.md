@@ -22,9 +22,9 @@ Następnie uruchom program:
 Po wygenerowaniu danych możesz uruchomić analizę w Pythonie:
 ```bash
 #dla linuxa/macos
-source nazwa_srodowiska/bin/activate
+source alaiz3n/3n_projekt/bin/activate
 #dla windows
-.\nazwa_srodowiska\Scripts\activate
+.\nalaiz3n\3n_projekt\Scripts\activate
 
 
 python3 alaiz3n/analiza.py
