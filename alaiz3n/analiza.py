@@ -111,12 +111,7 @@ class Liczba:
         plt.legend()
         plt.show()
 
-    def draw_graf_licza_operacji_do_sumy(self):
-        plt.plot(self.sumy, self.liczba_operacji)
-        plt.xlabel("Suma")
-        plt.ylabel("Liczba operacji")
-        plt.title("Suma do liczby operacji")
-        plt.show()
+    
 
 def main():
     l = Liczba()
@@ -145,7 +140,6 @@ def main():
     # Rysujemy wykresy
     l.draw_graf_liczba_do_sumy()
     l.draw_graf_il_operacji_do_liczby()
-    l.draw_graf_licza_operacji_do_sumy()
     # l.print_f()  # Opcjonalnie, do wyświetlenia przetworzonych danych
 
 if __name__ == "__main__":
