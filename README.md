@@ -4,14 +4,18 @@ Projekt badający hipotezę Collatza (3n+1). Składa się z programu w C generuj
 
 ## Struktura projektu
 - **`main.c`** – program generujący liczby do badania.
-- **`main`** – skompilowana wersja programu w C.
+- **`out/main`** – skompilowana wersja programu w C.
 - **`alaiz3n/analiza.py`** – skrypt Python analizujący wygenerowane dane.
 - **`alaiz3n/wynik.txt`** – plik z wynikami wygenerowanymi przez `main`.
 
 ## Kompilacja i uruchomienie
-Aby skompilować program, użyj komendy:
+Aby skompilować program, użyj make:
 ```bash
     make 
+```
+Aby skompilować program, użyj komendy:
+```bash
+    gcc main.c -o out/main -lgmp -fopenmp
 ```
 
 Następnie uruchom program:
