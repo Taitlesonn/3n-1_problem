@@ -11,7 +11,7 @@ Projekt badający hipotezę Collatza (3n+1). Składa się z programu w C generuj
 ## Kompilacja i uruchomienie
 Aby skompilować program, użyj komendy:
 ```bash
-gcc main.c -o main -lgmp -fopenmp
+    make 
 ```
 
 Następnie uruchom program:
@@ -19,7 +19,14 @@ Następnie uruchom program:
 ./main
 ```
 
-Po wygenerowaniu danych możesz uruchomić analizę w Pythonie:
+
+Po wygenerowaniu danych możesz uruchomić analizę w Pythonie za pomocą makefile(zalecane):
+```bash
+    cd alaiz3n
+    make run
+```
+
+Lub manualnie jeśli nie obsugujesz make:
 ```bash
 #dla linuxa/macos
 source alaiz3n/3n_projekt/bin/activate
