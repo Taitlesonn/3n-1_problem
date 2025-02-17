@@ -1,2 +1,2 @@
 main.out: main.c
-	gcc main.c -o main -lgmp -fopenmp
+	gcc main.c -o out/main -lgmp -fopenmp
