@@ -64,13 +64,13 @@ class Liczba:
         while i < n:
             suma = 0
             # Jeśli mamy mniej niż 100 elementów na końcu, używamy ich wszystkich
-            grupa = self.sumy[i:i+100] if t == 0 else self.liczba_operacji[i:i+100]
+            grupa = self.sumy[i:i+1000] if t == 0 else self.liczba_operacji[i:i+100]
             if not grupa:
                 break
             for wartosc in grupa:
                 suma += wartosc
             lista_r.append(suma / len(grupa))
-            i += 100
+            i += 1000
         return lista_r
 
     def get_x_aggregated(self):
@@ -81,10 +81,10 @@ class Liczba:
         i = 0
         n = len(self.liczba)
         while i < n:
-            grupa = self.liczba[i:i+100]
+            grupa = self.liczba[i:i+1000]
             if grupa:
                 x_agg.append(sum(grupa) / len(grupa))
-            i += 100
+            i += 1000
         return x_agg
 
     def draw_graf_liczba_do_sumy(self):
@@ -93,7 +93,7 @@ class Liczba:
         # Wykres zagregowanych danych (średnia co 100 elementów)
         x_agg = self.get_x_aggregated()
         y_agg = self.call_rel(0)
-        plt.plot(x_agg, y_agg, color="red", label="Średnia co 100 elementów")
+        plt.plot(x_agg, y_agg, color="red", label="Średnia co 1000 elementów")
         plt.xlabel("Liczba")
         plt.ylabel("Suma")
         plt.title("Liczba do sumy")
@@ -104,7 +104,7 @@ class Liczba:
         plt.plot(self.liczba, self.liczba_operacji, label="Dane oryginalne")
         x_agg = self.get_x_aggregated()
         y_agg = self.call_rel(1)
-        plt.plot(x_agg, y_agg, color="red", label="Średnia co 100 elementów")
+        plt.plot(x_agg, y_agg, color="red", label="Średnia co 1000 elementów")
         plt.xlabel("Liczba")
         plt.ylabel("Liczba operacji")
         plt.title("Ilość operacji do liczby")
@@ -128,7 +128,7 @@ def main():
                     pass
 
                 # Ograniczenie dla testów
-                if i >= 100000:
+                if i >= 10000000:
                     break
     except FileNotFoundError as e:
         print(f"Nie znaleziono pliku: {e}")
